@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Root权限守护者</string>
+    <string name="nav_home">首页</string>
+    <string name="nav_apps">应用管理</string>
+    <string name="nav_logs">日志</string>
+    <string name="nav_settings">设置</string>
+
+    <string name="root_status">Root状态</string>
+    <string name="rooted">已Root</string>
+    <string name="not_rooted">未Root</string>
+    <string name="check_root">检测Root</string>
+    <string name="root_granted">已授权</string>
+    <string name="root_denied">未授权</string>
+
+    <string name="apps_with_root">已获取Root的应用</string>
+    <string name="no_apps">暂无应用</string>
+    <string name="grant_root">授予Root</string>
+    <string name="revoke_root">撤销Root</string>
+
+    <string name="security_logs">安全日志</string>
+    <string name="no_logs">暂无日志</string>
+    <string name="clear_logs">清除日志</string>
+    <string name="log_grant">Root权限授予</string>
+    <string name="log_revoke">Root权限撤销</string>
+    <string name="log_request">Root权限请求</string>
+
+    <string name="settings">设置</string>
+    <string name="auto_monitor">自动监控</string>
+    <string name="auto_monitor_desc">自动监控Root权限使用</string>
+    <string name="notify_on_request">请求时通知</string>
+    <string name="notify_on_request_desc">应用请求Root时发送通知</string>
+    <string name="about">关于</string>
+    <string name="version">版本</string>
+
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="confirm_revoke">确认撤销Root权限？</string>
+    <string name="confirm_revoke_desc">这将撤销该应用的Root权限</string>
+    <string name="revoke_success">Root权限已撤销</string>
+    <string name="grant_success">Root权限已授予</string>
+</resources>
