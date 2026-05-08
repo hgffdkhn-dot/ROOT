@@ -13,12 +13,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.rootguard.presentation.components.SettingsToggleItem
+import com.rootguard.presentation.navigation.Screen
 import com.rootguard.presentation.viewmodel.SettingsViewModel
 
 @Composable
 fun SettingsScreen(
-    viewModel: SettingsViewModel = hiltViewModel()
+    viewModel: SettingsViewModel = hiltViewModel(),
+    navController: NavController = rememberNavController()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -65,6 +69,44 @@ fun SettingsScreen(
                     checked = uiState.settings.notifyOnRequest,
                     onCheckedChange = { viewModel.updateNotifyOnRequest(it) }
                 )
+            }
+
+            item {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = MaterialTheme.shapes.medium,
+                    colors = CardDefaults.cardColors(containerColor = Color.White),
+                    onClick = { navController.navigate(Screen.BootManager.route) }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(48.dp)
+                                .background(Color(0xFF2196F3).copy(alpha = 0.1f), MaterialTheme.shapes.medium),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(Icons.Default.Build, "Boot管理", tint = Color(0xFF2196F3))
+                        }
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "Boot 管理",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = Color.Black
+                            )
+                            Text(
+                                text = "备份、修改和恢复 boot 镜像",
+                                fontSize = 14.sp,
+                                color = Color.Gray
+                            )
+                        }
+                        Icon(Icons.Default.ChevronRight, "导航", tint = Color.Gray)
+                    }
+                }
             }
 
             item {
